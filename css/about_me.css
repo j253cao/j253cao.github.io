@@ -1,0 +1,141 @@
+.body1-background{
+    text-align: center;
+    padding-top:5vh;
+    background-color: #e4e4e4;
+}
+
+.body1-title{
+    font-family: calibri;
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 4.5vw;
+}
+
+.body1_contents-container{
+    display:inline-block;
+    width:80%;
+    height:50%;
+}
+
+.body1_contents-1{
+    display:inline-block;
+    width:30%;
+    text-align: center;
+    margin-left:1.5%;
+    margin-right:1.5%;
+}
+.body1_contents-2{
+    display:inline-block;
+    width:30%;
+    text-align: center;
+    vertical-align: top;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+}
+.body1_contents-3{
+    display:inline-block;
+    width:30%;
+    text-align: center;
+    vertical-align: top;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+}
+
+.body1-img{
+    width:120px;
+    margin-bottom: 10%;
+}
+
+.body1_header_text{
+    font-family: calibri;
+    font-size: 30;
+}
+
+.body1-title-text{
+    font-size: 45px; 
+    font-family: calibri; 
+    white-space: normal; 
+    margin-bottom: 3vh;
+}
+
+.body1-paragraph-text{
+    font-size: 30px; 
+    font-family: calibri; 
+    white-space: normal;
+    line-height:45px;
+}
+
+@media only screen and (max-width:768px) {
+
+    .body1_contents-container{
+    width:100%;
+    }
+
+    .body1-title-text{
+        font-size: 35px; 
+        font-family: calibri; 
+        white-space: normal; 
+        margin-bottom: 3vh;
+    }
+    
+    .body1-paragraph-text{
+        font-size: 20px; 
+        font-family: calibri; 
+        white-space: normal;
+        line-height:45px;
+    }
+}
+
+@media only screen and (max-width:600px){
+
+    .body1_contents-container{
+        display:inline-block;
+        text-align: center;
+        width:100%;
+     }
+    
+    .body1_contents-1{
+        display:block;
+        width:100%;
+        text-align: center;
+        margin-right: 0%;
+        margin-left: 0%;
+    }
+    .body1_contents-2{
+        display:block;
+        width:100%;
+        text-align: center;
+        margin-right: 0%;
+        margin-left: 0%;
+    }
+    .body1_contents-3{
+        display:block;
+        width:100%;
+        text-align: center;
+        margin-right: 0%;
+        margin-left: 0%;
+    }
+    .body1-img{
+        margin-bottom: 5vw;
+        margin-top: 10vw;
+    }
+
+    .body1-title-text{
+        font-size: 40px; 
+        font-family: calibri; 
+        white-space: normal; 
+        margin-bottom: 5vw;
+    }
+
+    .body1-paragraph-text{
+        font-size: 25px; 
+        font-family: calibri; 
+        white-space: normal;
+        line-height:35px;
+    }
+
+    .body1-title{
+        margin-bottom: 10vw;
+    }
+
+}

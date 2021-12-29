@@ -1,0 +1,64 @@
+.header_background{
+    background: url("../Static/HeaderGif2.gif") no-repeat center center fixed;
+    display:block;
+    align-items: center;
+    justify-content:center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.header_container{
+    display:block;
+    text-align:center;
+    color:white;
+    width: 100%;
+    max-height: 50%;
+    word-wrap: break-word;
+    white-space: normal;
+    position: absolute;
+    top:30%
+}
+
+.header_text{
+    color: white;
+    font-size: 4.5vw;
+    font-family: calibri;
+    font-weight: bold;
+    padding-bottom: 3vw;
+}
+
+.header_title-button{
+    background-color: #292929;
+    background-size:cover;
+    width: 28vw;
+    height:5.4vw;
+    border-radius:0.5vh;
+    color: white;
+    font-family: calibri;
+    font-size:1.7vw;
+    cursor: pointer;
+}
+
+button.header_title-button:hover{
+    background-color: #131313;
+}
+
+@media only screen and (max-width:600px) {
+    .header_text{
+        font-size: 10vw;
+    }
+    .header_container{
+        display:block;
+        text-align:center;
+        color:white;
+        width: 100%;
+        max-height: 50%;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+    .header_title-button{
+        width: 55vw;
+        font-size: 3vw;
+      
+    }
+}

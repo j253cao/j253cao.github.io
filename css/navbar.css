@@ -1,0 +1,222 @@
+.navbar{
+    position:sticky;
+    top:0;
+    background-color: #363636;
+    height:10vh;
+    display:flex;
+    align-items: center;
+    min-width: 100%;
+    z-index: 101;
+}
+
+
+.navbar_namelogo-container{
+    position:absolute;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    width:25%;
+    height:80%;
+    
+}
+
+.navbar-text1{
+    color: white;
+    font-family: calibri;
+    font-size: 2.3vw;
+    font-weight: bold;
+    margin: 1vw;
+}
+
+
+.navbar_links-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:35%;
+    height:80%;
+    position:relative;
+    left:60%;
+}
+
+.navbar-text2{
+    display:inline;
+    color: white;
+    font-family: calibri;
+    font-size: 1.2vw;
+    margin-left: 0.7vw;
+    margin-right: 0.7vw;
+}
+
+.navbar_anchors{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius: 5%;
+    height:75%;
+    text-decoration: none;
+    
+}
+
+.navbar_anchors:hover{
+    background-color:rgb(78, 78, 78);
+    cursor:pointer;
+}
+
+.navbar-dropbtn{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color:rgb(78, 78, 78);
+    color:white;
+    font-family: calibri;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.navbar-links{
+    display:flex;
+    width:50%;
+    justify-content: space-around;
+    position:absolute;
+    height:92vh;
+    left:64%;
+    top:85px;
+    background-color:#363636;
+    display:flex;
+    flex-direction: column;
+    text-align:center;
+    z-index: 100;
+    transform:translateX(100%);
+    transition: transform 0.5s ease-in;
+}
+
+.navbar-links li{
+    list-style-type: none;
+}
+
+.navbar-links a{
+    color:white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size:20px;
+    font-family: calibri;
+}
+
+
+.burger div{
+    width: 1.7vw;
+    height: 0.1vw;
+    background-color: white;
+    margin:0.43vw;
+}
+
+.burger{
+    display:block;
+    cursor:pointer;
+}
+
+.navbar-active{
+    transform:translateX(0%);
+}
+
+
+@media only screen and (max-width:1024px){
+    .navbar-text1{
+        color: white;
+        font-family: calibri;
+        font-size: 3vw;
+        font-weight: bold;
+        margin: 1vw;
+    }
+    .navbar-text2{
+        display:inline;
+        color: white;
+        font-family: calibri;
+        font-size: 1.5vw;
+        margin-left: 0.5vw;
+        margin-right: 0.5vw;
+    }
+    .navbar-links{
+        display:flex;
+        width:50%;
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (max-width:768px){
+    .navbar-text1{
+        color: white;
+        font-family: calibri;
+        font-size: 3.5vw;
+        font-weight: bold;
+        margin: 1vw;
+    }
+    .navbar-text2{
+        display:inline;
+        color: white;
+        font-family: calibri;
+        font-size: 1.7vw;
+        margin-left: 0.2vw;
+        margin-right: 0.2vw;
+    }
+    .navbar-links{
+        display:flex;
+        width:80%;
+        justify-content: space-around;
+        position:absolute;
+        height:92vh;
+        left:34%;
+        
+
+        
+    }
+    .navbar-links li{
+        font-size:12px;
+    }
+}
+
+@media only screen and (max-width:600px){
+    .navbar-text1{
+        color: white;
+        font-family: calibri;
+        font-size: 3.5vw;
+        font-weight: bold;
+        margin: 1vw;
+    }
+    .navbar-text2{
+        display:inline;
+        color: white;
+        font-family: calibri;
+        font-size: 2.5vw;
+        margin-left: 5%;
+        margin-right: 0%;
+    }
+
+    .navbar_links-container{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        width:35%;
+        height:80%;
+        position:relative;
+        left:55%;
+    }
+    .navbar-links{
+        display:flex;
+        width:80%;
+        justify-content: space-around;
+        position:absolute;
+        height:92vh;
+        left:48%;
+        
+
+        
+    }
+    .navbar-links a{
+        font-size:12px;
+    }
+}

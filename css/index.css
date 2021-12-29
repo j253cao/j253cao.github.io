@@ -1,0 +1,23 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    white-space: nowrap;
+}
+
+html{
+    overflow-y: scroll;
+    overflow-x:hidden;
+    scroll-behavior: smooth;
+}
+
+.container{
+    position:absolute;
+    width:auto;
+    margin:auto;
+}
