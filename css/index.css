@@ -16,6 +16,11 @@ html{
     scroll-behavior: smooth;
 }
 
+body{
+
+    overflow-x:hidden;
+}
+
 .container{
     position:absolute;
     width:auto;
