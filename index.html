@@ -12,35 +12,384 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
-  <style></style>
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      background: #0f0c29;
+      background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+      min-height: 100vh;
+      color: #fff;
+    }
 
-  <body class="d-flex justify-content-center bg-light align-items-center" style="height: 100vh; width: 80vw">
-    <div class="card bg-light border-0" style="max-width: 700px">
-      <div class="card-body display-4 font-weight-normal">
-        Hi, I'm Johnny <span><img width="40px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Emoji_u1f44b.svg/2048px-Emoji_u1f44b.svg.png" /></span>
-      </div>
-      <div class="card-body h4 font-weight-light">
-        I'm a 20 year old student at the <strong>University of Waterloo</strong>. I'm currently studying <strong>Management Engineering</strong> and developed an interest in programming. I also enjoy
-        <strong>anime</strong> and <strong>gaming</strong> like many others.
-        <br />
-        You can click to see my <a href="https://drive.google.com/file/d/1kyNBW-7GVsUmyxbO_38mIjiW82PIZl7c/view?usp=sharing" target="_blank"><strong style="color: black">resume</strong></a> or
-        check out other ways to contact me below.
-      </div>
-      <div class="card-body d-flex w-25 justify-content-between">
-        <a href="mailto:j253cao@uwaterloo.ca" target="_blank">
-          <img class="img-fluid" alt="Responsive image" width="15px" src="https://www.svgrepo.com/show/16431/at-symbol.svg" />
-        </a>
-        <a href="https://www.linkedin.com/in/johnny-cao/" target="_blank">
-          <img class="img-fluid" alt="Responsive image" width="15px" src="https://cdns.iconmonstr.com/wp-content/releases/preview/2012/240/iconmonstr-linkedin-3.png" />
-        </a>
-        <a href="https://github.com/j253cao" target="_blank">
-          <img class="img-fluid" alt="Responsive image" width="15px" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" />
-        </a>
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+    }
+
+    .content-wrapper::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
+      z-index: -1;
+    }
+
+    .main-content {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 4rem;
+      position: relative;
+      overflow: hidden;
+      min-width: 800px;
+    }
+
+    .main-content::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 50%
+      );
+      animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .wave-emoji {
+      animation: wave 2.5s infinite;
+      display: inline-block;
+      transform-origin: 70% 70%;
+    }
+
+    @keyframes wave {
+      0% {
+        transform: rotate(0deg);
+      }
+      10% {
+        transform: rotate(14deg);
+      }
+      20% {
+        transform: rotate(-8deg);
+      }
+      30% {
+        transform: rotate(14deg);
+      }
+      40% {
+        transform: rotate(-4deg);
+      }
+      50% {
+        transform: rotate(10deg);
+      }
+      60% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    .resume-link {
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: #fff;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .resume-link i {
+      font-size: 0.9rem;
+      color: #64ffda;
+      transition: all 0.3s ease;
+    }
+
+    .resume-link:hover i {
+      transform: translateX(4px);
+    }
+
+    .greeting {
+      margin-bottom: 2.5rem;
+    }
+
+    .bio {
+      margin-bottom: 3rem;
+      line-height: 1.8;
+    }
+
+    .social-links {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 3rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      flex-wrap: nowrap;
+    }
+
+    .social-link {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+      white-space: nowrap;
+      min-width: fit-content;
+    }
+
+    .social-link i {
+      font-size: 1.1rem;
+      color: #64ffda;
+      transition: all 0.3s ease;
+      width: 20px;
+      text-align: center;
+    }
+
+    .social-link:hover {
+      color: #fff;
+      transform: translateX(4px);
+    }
+
+    .social-link:hover i {
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    .highlight {
+      color: #64ffda;
+      font-weight: 500;
+    }
+
+    .admin-panel {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: none;
+    }
+
+    .admin-panel.show {
+      display: block;
+    }
+
+    .admin-input {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      padding: 0.5rem;
+      border-radius: 4px;
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+
+    .admin-input:focus {
+      outline: none;
+      border-color: #64ffda;
+    }
+
+    .admin-button {
+      background: #64ffda;
+      color: #0f0c29;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .admin-button:hover {
+      background: #fff;
+    }
+
+    .admin-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .admin-toggle:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .admin-toggle i {
+      color: #64ffda;
+      font-size: 1.2rem;
+    }
+  </style>
+
+  <body class="d-flex justify-content-center align-items-center p-4">
+    <div class="content-wrapper">
+      <div class="main-content" style="max-width: 700px; width: 100%">
+        <div class="greeting display-4 font-weight-normal">
+          Hi, I'm Johnny
+          <span class="wave-emoji">
+            <img
+              width="40px"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Emoji_u1f44b.svg/2048px-Emoji_u1f44b.svg.png"
+            />
+          </span>
+        </div>
+        <div class="bio h4 font-weight-light">
+          I'm a 20 year old student at the
+          <span class="highlight">University of Waterloo</span>. I'm currently
+          studying <span class="highlight">Management Engineering</span> and
+          developed an interest in programming. I also enjoy
+          <span class="highlight">anime</span> and
+          <span class="highlight">gaming</span> like many others. <br /><br />
+          You can click to see my
+          <a
+            href="https://drive.google.com/file/d/1F6GT85c7GfHXeBYE-aKOcg4Lb8ZKoFqB/view?usp=sharing"
+            target="_blank"
+            class="resume-link"
+          >
+            resume <i class="fas fa-external-link-alt"></i>
+          </a>
+          or check out other ways to contact me below.
+        </div>
+        <div class="social-links">
+          <a
+            href="mailto:j253cao@uwaterloo.ca"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fas fa-envelope"></i>
+            j253cao@uwaterloo.ca
+          </a>
+          <a
+            href="https://www.linkedin.com/in/johnny-cao/"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-linkedin"></i>
+            linkedin.com/in/johnny-cao
+          </a>
+          <a
+            href="https://github.com/j253cao"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-github"></i>
+            github.com/j253cao
+          </a>
+        </div>
       </div>
     </div>
+
+    <!-- Admin Panel -->
+    <div class="admin-toggle" onclick="toggleAdminPanel()">
+      <i class="fas fa-cog"></i>
+    </div>
+    <div class="admin-panel" id="adminPanel">
+      <input
+        type="password"
+        id="adminPassword"
+        class="admin-input"
+        placeholder="Enter password"
+      />
+      <input
+        type="text"
+        id="newResumeLink"
+        class="admin-input"
+        placeholder="New resume link"
+        style="display: none"
+      />
+      <button class="admin-button" onclick="handleAdminAction()">Submit</button>
+    </div>
+
+    <!-- Load configuration -->
+    <script src="config.js"></script>
+    <script>
+      let isAuthenticated = false;
+
+      function toggleAdminPanel() {
+        const panel = document.getElementById("adminPanel");
+        panel.classList.toggle("show");
+        if (!panel.classList.contains("show")) {
+          isAuthenticated = false;
+          document.getElementById("newResumeLink").style.display = "none";
+          document.getElementById("adminPassword").style.display = "block";
+        }
+      }
+
+      function handleAdminAction() {
+        if (!isAuthenticated) {
+          const password = document.getElementById("adminPassword").value;
+          if (password === config.ADMIN_PASSWORD) {
+            isAuthenticated = true;
+            document.getElementById("adminPassword").style.display = "none";
+            document.getElementById("newResumeLink").style.display = "block";
+            document.getElementById("newResumeLink").value = "";
+          } else {
+            alert("Incorrect password");
+          }
+        } else {
+          const newLink = document.getElementById("newResumeLink").value;
+          if (newLink) {
+            const resumeLink = document.querySelector(".resume-link");
+            resumeLink.href = newLink;
+            alert("Resume link updated successfully!");
+            toggleAdminPanel();
+          }
+        }
+      }
+    </script>
+
     <script src="index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -52,5 +401,4 @@
       crossorigin="anonymous"
     ></script>
   </body>
-  <></>
 </html>
